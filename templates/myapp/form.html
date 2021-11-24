@@ -6,10 +6,15 @@
   </head>
   <body>
     <h1>{{heading}}</h1>
-    <form  action="" method="post">
+    <form  action="" method="POST">
       {{test_form.as_p}}
       {%csrf_token%}
       <input type="submit" name="submit" value="Submit">
     </form>
+    {% if form_submitted %}
+      <p>Name:{{user_name}}</p>
+      <p>Date of Birth:{{user_dob}}</p>
+      <p>Email:{{user_email}}</p>
+    {% endif %}
   </body>
 </html>
